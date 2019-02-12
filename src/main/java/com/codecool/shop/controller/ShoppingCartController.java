@@ -38,9 +38,15 @@ public class ShoppingCartController extends HttpServlet {
         WebContext context = new WebContext(req, resp, req.getServletContext());
 //        context.setVariables(params);
 
-        if (req.getParameter("1") != null){
-            shoppingCart.add(ProductDaoMem.getInstance().find(1));
+        for (int i = 0; i <ProductDaoMem.getInstance().getAll().size() ; i++) {
+
+            String str = Integer.toString(i);
+
+            if (req.getParameter(str) != null){
+                shoppingCart.add(ProductDaoMem.getInstance().find(i));
+            }
         }
+
         resp.sendRedirect(req.getContextPath() + "/");
         System.out.println(ShoppingCart.getAll());
     }
