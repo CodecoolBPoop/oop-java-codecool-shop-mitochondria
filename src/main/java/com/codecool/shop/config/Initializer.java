@@ -23,7 +23,7 @@ public class Initializer implements ServletContextListener {
         ProductDao productDataStore = ProductDaoMem.getInstance();
         ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
-        ShoppingCart shoppingCart = ShoppingCart.getInstance();
+//        ShoppingCart shoppingCart = ShoppingCart.getInstance();
 
 
 
@@ -49,6 +49,6 @@ public class Initializer implements ServletContextListener {
         productDataStore.add(new Product("Amazon Fire HD 8", 89, "USD", "Amazon's latest Fire HD 8 tablet is a great value for media consumption.", tablet, amazon));
         productDataStore.add(new Product("Nintendo Switch Pro Controller", 57, "USD", "Take your game sessions up a notch with the Pro Controller.", accessories, nintendo));
 
-        shoppingCart.add(new Product("fikandel",50,"USD","Macska",tablet,amazon));
+//        shoppingCart.add(new Product("fikandel",50,"USD","Macska",tablet,amazon));
     }
 }

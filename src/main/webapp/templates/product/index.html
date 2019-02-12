@@ -39,7 +39,7 @@
         <strong th:text="${cat.name}">Category Title</strong>
     </div>
 
-    <div id="products" class="row" th:each="cart : ${shoppingcart}">
+    <div id="products" class="row">
         <div class="col col-sm-12 col-md-6 col-lg-4" th:each="prod,iterStat : ${products}">
             <div class="card">
                 <img class="" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.jpg'" alt="" />
@@ -52,14 +52,14 @@
                         <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
                         <p class="supplier" th:text="${prod.supplier.name}"></p>
                     </div>
+                    <form action="/addtocart" >
                     <div class="card-text">
-                        <a class="btn btn-success" href="#">Add to cart</a>
-
+                        <input type="submit" th:name="${prod.getId()}" value="Add to cart">
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <p class="shoppingcart" th:text="${cart}"> fikuszka</p>
     </div>
 
 </div>
