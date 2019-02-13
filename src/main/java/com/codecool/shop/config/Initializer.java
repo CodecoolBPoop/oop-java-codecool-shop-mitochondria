@@ -26,7 +26,6 @@ public class Initializer implements ServletContextListener {
         ShoppingCart shoppingCart = ShoppingCart.getInstance();
 
 
-
         //setting up a new supplier
         Supplier amazon = new Supplier("Amazon", "Digital content and services");
         supplierDataStore.add(amazon);
@@ -39,15 +38,22 @@ public class Initializer implements ServletContextListener {
         //setting up a new product category
         ProductCategory tablet = new ProductCategory("Tablet", "Hardware", "A tablet computer, commonly shortened to tablet, is a thin, flat mobile computer with a touchscreen display.");
         productCategoryDataStore.add(tablet);
-        ProductCategory accessories = new ProductCategory("Accessories", "Video Game", "All accessories you would need for your gaming experience." );
+        ProductCategory accessories = new ProductCategory("Accessories", "Video Game", "All accessories you would need for your gaming experience.");
         productCategoryDataStore.add(accessories);
 
 
         //setting up products and printing it
-        productDataStore.add(new Product("Amazon Fire", 49.9f, "USD", "Fantastic price. Large content ecosystem. Good parental controls. Helpful technical support.", tablet, amazon));
-        productDataStore.add(new Product("Lenovo IdeaPad Miix 700", 479, "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", tablet, lenovo));
-        productDataStore.add(new Product("Amazon Fire HD 8", 89, "USD", "Amazon's latest Fire HD 8 tablet is a great value for media consumption.", tablet, amazon));
-        productDataStore.add(new Product("Nintendo Switch Pro Controller", 57, "USD", "Take your game sessions up a notch with the Pro Controller.", accessories, nintendo));
+        productDataStore.add(new Product("Sol", 49.9f, "USD", "A really young and shiny star.", tablet, amazon));
+        productDataStore.add(new Product("Rigel", 479, "USD", "The shiniest star of the Orion.", tablet, lenovo));
+        productDataStore.add(new Product("Arcturus", 89, "USD", "A huge red star.", tablet, amazon));
+        productDataStore.add(new Product("Sirius B", 57, "USD", "Take your game sessions up a notch with the Pro Controller.", accessories, nintendo));
+        productDataStore.add(new Product("Earth", 49.9f, "USD", "Fantastic price. Large content ecosystem. Good parental controls. Helpful technical support.", tablet, amazon));
+        productDataStore.add(new Product("Mars", 479, "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", tablet, lenovo));
+        productDataStore.add(new Product("Saturn", 89, "USD", "Amazon's latest Fire HD 8 tablet is a great value for media consumption.", tablet, amazon));
+        productDataStore.add(new Product("Messier 32", 57, "USD", "Take your game sessions up a notch with the Pro Controller.", accessories, nintendo));
+        productDataStore.add(new Product("NGC 3377", 49.9f, "USD", "Fantastic price. Large content ecosystem. Good parental controls. Helpful technical support.", tablet, amazon));
+        productDataStore.add(new Product("Sagittarius A", 479, "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", tablet, lenovo));
+
 
     }
 }
