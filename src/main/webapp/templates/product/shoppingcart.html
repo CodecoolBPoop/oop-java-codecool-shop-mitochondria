@@ -34,10 +34,37 @@
     <h1>Shopping cart</h1>
 </div>
 
-<div class="card" th:each="cat,iterStat : ${shoppingcart}">
-    <p th:text="${cat.name}"></p>
-    <p th:text="${totalprice}"></p>
 
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="cartheader">
+                <div class="row">
+                    <div class="col">Product</div>
+                    <div class="col">Name</div>
+                    <div class="col">Price</div>
+                    <div class="col">Product total</div>
+                    <div class="col">Quantity</div>
+                </div>
+            </div>
+            <div class="productslist" th:each="cart,iterStat : ${shoppingcart}">
+                <div class="row">
+                    <div class="col"><img src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${cart.getId()} + '.jpg'" alt="" /></div>
+                    <div class="col" th:text="${cart.name}"></div>
+                    <div class="col" th:text="${cart.getDefaultPrice()}"></div>
+                    <div class="col">160</div>
+                    <div class="col">1</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="container">
+                <div class="cartpayments">
+                    Malacka
+                </div>
+            </div>
+        </div>
+        </div>
 </div>
 
 </body>
