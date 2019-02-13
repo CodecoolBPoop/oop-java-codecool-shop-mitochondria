@@ -38,7 +38,11 @@
     <div class="card" th:each="cat,iterStat : ${category}">
         <strong th:text="${cat.name}">Category Title</strong>
     </div>
-
+    <form action="/payment" >
+        <div class="card-text">
+            <input class="btn-success" type="submit" value="Go to Payment">
+        </div>
+    </form>
     <div id="products" class="row">
         <div class="col col-sm-12 col-md-6 col-lg-4" th:each="prod,iterStat : ${products}">
             <div class="card">
