@@ -37,9 +37,9 @@ public class Initializer implements ServletContextListener {
 
 
         //setting up a new product category
-        ProductCategory tablet = new ProductCategory("Tablet", "Hardware", "A tablet computer, commonly shortened to tablet, is a thin, flat mobile computer with a touchscreen display.");
+        ProductCategory tablet = new ProductCategory("Tablet", "Hardware", "A tablet computer, commonly shortened to tablet, is a thin, flat mobile computer with a touchscreen display.", 1);
         productCategoryDataStore.add(tablet);
-        ProductCategory accessories = new ProductCategory("Accessories", "Video Game", "All accessories you would need for your gaming experience." );
+        ProductCategory accessories = new ProductCategory("Accessories", "Video Game", "All accessories you would need for your gaming experience.", 2 );
         productCategoryDataStore.add(accessories);
 
 

@@ -26,7 +26,6 @@ public class ProductController extends HttpServlet {
 
             throws ServletException, IOException {
 
-        System.out.println("szia from the index!");
 
         ProductDao productDataStore = ProductDaoMem.getInstance();
         ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
@@ -54,10 +53,15 @@ public class ProductController extends HttpServlet {
 
             throws ServletException, IOException {
 
-//        ProductDao productDataStore = ProductDaoMem.getInstance();
-//        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
-//        SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
-//        ShoppingCart shoppingCart = ShoppingCart.getInstance();
+        String testText = req.getParameter("testName");
+
+        System.out.println(testText);
+
+
+        ProductDao productDataStore = ProductDaoMem.getInstance();
+        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
+        SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
+        ShoppingCart shoppingCart = ShoppingCart.getInstance();
 //
 ////        Map params = new HashMap<>();
 ////        params.put("category", productCategoryDataStore.find(1));
@@ -65,14 +69,20 @@ public class ProductController extends HttpServlet {
 //
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
+
+
+
+        System.out.println(productCategoryDataStore.findByName(testText));
+        System.out.println(productCategoryDataStore.findByName("Tablet"));
+
 ////        context.setVariables(params);
 //        context.setVariable("recipient", "World");
-//        context.setVariable("category", productCategoryDataStore.getAll());
-//        context.setVariable("products", productDataStore.getAll());
-//        context.setVariable("supplier", supplierDataStore.getAll());
-//        context.setVariable("shoppingcart", ShoppingCart.getAll());
+        context.setVariable("category", productDataStore.getAll());
+        context.setVariable("products", productDataStore.getBy(productCategoryDataStore.findByName(testText)));
+        context.setVariable("supplier", supplierDataStore.getAll());
+        context.setVariable("shoppingcart", ShoppingCart.getAll());
 //        context.setVariable("all", "All Category");
-        engine.process("product/test.html", context, resp.getWriter());
+        engine.process("product/index.html", context, resp.getWriter());
     }
 
 }
