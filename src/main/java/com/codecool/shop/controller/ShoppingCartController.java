@@ -38,7 +38,7 @@ public class ShoppingCartController extends HttpServlet {
         WebContext context = new WebContext(req, resp, req.getServletContext());
 //        context.setVariables(params);
 
-        for (int i = 0; i <ProductDaoMem.getInstance().getAll().size() ; i++) {
+        for (int i = 0; i < 20; i++) {
 
             String str = Integer.toString(i);
 
