@@ -50,7 +50,7 @@
                                     <p><a href="#" th:text="${prod.getName()}">*products in cart</a> <span class="price" th:text="${prod.getPrice()}">*prize of the product*</span></p>
                                     <hr>
                                 </div>
-                            <p>Total <span class="price" style="color:black" ><b>*total prize*</b></span></p>
+                            <p>Total USD: <span class="price" style="color:black" th:text="${totalPrice}"><b>*total price*</b></span></p>
                         </div>
 
                         <div class="col-50">
