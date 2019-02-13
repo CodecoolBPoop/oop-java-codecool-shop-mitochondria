@@ -35,9 +35,22 @@
 </div>
 
 <div class="container">
-    <div class="card" th:each="cat,iterStat : ${category}">
-        <strong th:text="${cat.name}">Category Title</strong>
-    </div>
+
+
+        <select>
+            <option th:text="${all}"></option>
+            <div class="card" th:each="cat,iterStat : ${category}">
+            <option th:text="${cat.name}">
+                Category Title
+            </option>
+            </div>
+        </select>
+
+
+    <!--<div class="card">-->
+        <!--<strong th:text="${all}">Category Title</strong>-->
+    <!--</div>-->
+
 
     <div id="products" class="row">
         <div class="col col-sm-12 col-md-6 col-lg-4" th:each="prod,iterStat : ${products}">
