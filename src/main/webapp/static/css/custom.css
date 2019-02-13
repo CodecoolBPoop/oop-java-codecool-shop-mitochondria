@@ -1,63 +1,70 @@
-.glyphicon {
-    margin-right:5px;
+@font-face {
+    font-family: theblack;
+    src: url('TheBlackCassanova.otf');
 }
-.thumbnail
-{
+
+.glyphicon {
+    margin-right: 5px;
+}
+
+.thumbnail {
     margin-bottom: 20px;
     padding: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
 }
-.thumbnail img
-{
+
+.thumbnail img {
     margin-top: 10px;
 }
-.item.list-group-item
-{
+
+.item.list-group-item {
     float: none;
     width: 100%;
     background-color: #fff;
     margin-bottom: 10px;
 }
-.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
-{
+
+.item.list-group-item:nth-of-type(odd):hover, .item.list-group-item:hover {
     background: #428bca;
 }
 
-.item.list-group-item .list-group-image
-{
+.item.list-group-item .list-group-image {
     margin-right: 10px;
 }
-.item.list-group-item .thumbnail
-{
+
+.item.list-group-item .thumbnail {
     margin-bottom: 0px;
 }
-.item.list-group-item .caption
-{
+
+.item.list-group-item .caption {
     padding: 9px 9px 0px 9px;
 }
-.item.list-group-item:nth-of-type(odd)
-{
+
+.item.list-group-item:nth-of-type(odd) {
     background: #eeeeee;
 }
 
-.item.list-group-item:before, .item.list-group-item:after
-{
+.item.list-group-item:before, .item.list-group-item:after {
     display: table;
     content: " ";
 }
 
-.item.list-group-item img
-{
+.item.list-group-item img {
     float: left;
+
 }
-.item.list-group-item:after
-{
+
+.product-img {
+    max-height: 350px;
+}
+
+.item.list-group-item:after {
     clear: both;
 }
-.list-group-item-text
-{
+
+.list-group-item-text {
     margin: 0 0 11px;
 }
 
@@ -65,4 +72,132 @@
 {
     margin-bottom: 30px;
     font-size: 20px;
+}
+.col {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+body {
+    background-image: url('/static/img/back.jpg');
+}
+
+div.menu {
+    position: relative;
+    top: -50px;
+    height: 380px;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 36em;
+    height: 26em;
+
+}
+
+li {
+    height: 8em;
+    width: 8em;
+    color: #ffffff;
+    text-shadow: 2px 1px 2px #000000;
+    text-align: center;
+    cursor: pointer;
+    -webkit-border-radius: 4em;
+    -moz-border-radius: 4em;
+    -ms-border-radius: 4em;
+    -o-border-radius: 4em;
+    border-radius: 4em;
+    background-position: top left;
+
+}
+
+.moon-1 {
+    background-image: url('/static/img/first-m.png');
+}
+
+.moon-2 {
+    background-image: url('/static/img/second-m.png');
+}
+
+
+.moon-3 {
+    background-image: url('/static/img/third-m.png');
+}
+
+
+.moon-4 {
+    background-image: url('/static/img/fourth-m.png');
+}
+
+
+.moon-5 {
+    background-image: url('/static/img/fifth-m.png');
+}
+
+
+.moon-6 {
+    background-image: url('/static/img/sixth-m.png');
+}
+
+
+.moon-7 {
+    background-image: url('/static/img/seventh-m.png');
+}
+
+
+li.roundabout-in-focus {
+    cursor: default;
+}
+
+li span {
+    display: block;
+    padding-top: 3.5em;
+}
+
+
+li.monolith {
+    background-image: url('/static/img/jupiter.png');
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    width: 300px;
+    height: 315px;
+    position: absolute;
+    z-index: 260;
+    left: 135px;
+    top: 65px;
+    border: none;
+    border-radius: 4em;
+}
+
+li.monolith span {
+    font: 4em theblack, sans-serif;
+    padding-top: 80px !important;
+}
+
+.card{
+    background: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 10px;
+}
+
+.card-header, .card-body{
+    background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.card-header{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btn-success{
+    border-radius: 10px;
 }
