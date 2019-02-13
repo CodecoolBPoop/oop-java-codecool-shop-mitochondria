@@ -37,6 +37,11 @@ public class Product extends BaseModel {
         return String.valueOf(this.defaultPrice) + " " + this.defaultCurrency.toString();
     }
 
+    public float getFloatPrice() {
+        return this.defaultPrice;
+    }
+
+
     public void setPrice(float price, String currency) {
         this.defaultPrice = price;
         this.defaultCurrency = Currency.getInstance(currency);
@@ -59,6 +64,7 @@ public class Product extends BaseModel {
         this.supplier = supplier;
         this.supplier.addProduct(this);
     }
+
 
     @Override
     public String toString() {
