@@ -35,11 +35,24 @@
 </div>
 
 <div class="container">
+
     <div class="row">
         <div class="col-75">
             <div class="container">
                 <form action="/payment">
                     <div class="row">
+                        <div class="col-50" >
+                            <h3>Cart</h3>
+                                <div th:each="prod,iterStat : ${shoppingcart}" >
+                                    <span class="price" style="color:black">
+                                    <i class="shopping-cart"></i>
+                                    </span>
+                                    <p><a href="#" th:text="${prod.getName()}">*products in cart</a> <span class="price" th:text="${prod.getPrice()}">*prize of the product*</span></p>
+                                    <hr>
+                                </div>
+                            <p>Total <span class="price" style="color:black"><b>*total prize*</b></span></p>
+                        </div>
+
                         <div class="col-50">
                             <h3>Billing Address</h3>
                             <label for="name"><i class="user"></i> Full Name</label>
@@ -66,7 +79,7 @@
                             </div>
                             <label for="cname">Name on Card</label>
                             <input type="text" id="cname" name="cardname">
-                            <label for="ccnum">Credit card number</label>
+                            <label for="ccnum">Card number</label>
                             <input type="text" id="ccnum" name="cardnumber">
                             <label for="expmonth">Exp Month</label>
                             <input type="text" id="expmonth" name="expmonth">
@@ -83,18 +96,6 @@
                 </form>
         </div>
 
-        <div class="col-25">
-            <div class="container">
-                <h4>Cart
-                    <span class="price" style="color:black">
-          <i class="shopping-cart"></i>
-        </span>
-                </h4>
-                <p><a href="#" th:text="${shoppingcart}">*products in cart</a> <span class="price">*prize of the product*</span></p>
-                <hr>
-                <p>Total <span class="price" style="color:black"><b>*total prize*</b></span></p>
-            </div>
-        </div>
     </div>
 
 </div>
