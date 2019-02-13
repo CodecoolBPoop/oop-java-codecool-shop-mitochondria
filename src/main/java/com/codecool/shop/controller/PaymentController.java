@@ -26,10 +26,12 @@ public class PaymentController extends HttpServlet{
 
         ShoppingCart shoppingCart = ShoppingCart.getInstance();
 
+
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
 //
         context.setVariable("shoppingcart", shoppingCart.getAll());
+        context.setVariable("totalPrice", ShoppingCart.getTotalPrice());
         engine.process("product/payment_info.html", context, resp.getWriter());
     }
 }
