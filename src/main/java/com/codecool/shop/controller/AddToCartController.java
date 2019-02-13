@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @WebServlet(urlPatterns = {"/addtocart"})
-public class ShoppingCartController extends HttpServlet {
+public class AddToCartController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -46,7 +46,6 @@ public class ShoppingCartController extends HttpServlet {
                 shoppingCart.add(ProductDaoMem.getInstance().find(i));
             }
         }
-
         resp.sendRedirect(req.getContextPath() + "/");
         System.out.println(ShoppingCart.getAll());
     }

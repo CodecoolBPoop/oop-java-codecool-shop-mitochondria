@@ -64,9 +64,7 @@
                 </div>
                 <div class="card-body">
                     <div class="card-text">
-                        <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
-                        <p class="supplier" th:text="${prod.supplier.name}"></p>
-                    </div>
+                        <p class="lead" th:text="${prod.getPrice()}">100 USD</p></div>
                     <form action="/addtocart" >
                     <div class="card-text">
                         <input class="btn-success" type="submit" th:name="${prod.getId()}" value="Add to cart">
