@@ -37,7 +37,7 @@ public class ProductCategoryDaoMem implements ProductCategoryDao {
     }
 
     @Override
-    public ProductCategory findByName(String cat) {
+    public ProductCategory findCategoryByName(String cat) {
         return data.stream().filter(t -> Objects.equals(t.getName(), cat)).findFirst().orElse(null);
     }
 
