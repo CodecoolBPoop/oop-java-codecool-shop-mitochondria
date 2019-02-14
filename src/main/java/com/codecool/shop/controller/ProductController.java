@@ -90,7 +90,7 @@ public class ProductController extends HttpServlet {
         context.setVariable("shoppingcart", ShoppingCart.getAll());
         context.setVariable("all", "All Categories");
         context.setVariable("all2", "All Suppliers");
-        engine.process("product/index.html", context, resp.getWriter());
+        engine.process("product/products.html", context, resp.getWriter());
     }
 
 }
