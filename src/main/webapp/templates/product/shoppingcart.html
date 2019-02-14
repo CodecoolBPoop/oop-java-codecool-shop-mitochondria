@@ -15,7 +15,7 @@
             <div class="cartheader" style="margin-top: 50px">
                 <div class="row font-weight-bold"><p class="text-center w-100">Shopping Cart</p></div>
                 <div class="row">
-                    <div class="col">Product</div>
+                    <div class="col ml-2">Product</div>
                     <div class="col">Name</div>
                     <div class="col">Price</div>
                     <div class="col">Product total</div>
@@ -24,14 +24,14 @@
             </div>
             <div class="productslist" th:each="cart,iterStat : ${shoppingcart}">
                 <div class="row">
-                    <div class="col">   <img class="cart-product-img" src="http://placehold.it/400x250/000/fff"
+                    <div class="col">   <img class="cart-product-img ml-2" src="http://placehold.it/400x250/000/fff"
                                           th:attr="src='/static/img/product_' + ${cart.getId()} + '.png'" alt=""/></div>
                     <div class="col">
                         <div class="row font-weight-bold" th:text="${cart.name}"></div>
                         <div class="row font-size-description" th:text="${cart.description}"></div>
                     </div>
-                    <div class="col" th:text="${cart.getDefaultPrice()}"></div>
-                    <div class="col">160</div>
+                    <div class="col" th:text="${cart.getDefaultPrice()} + ' ' + USD"></div>
+                    <div class="col">0.0 USD</div>
                     <div class="col">1</div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="row cartheader font-weight-bold"><p class="text-center w-100">Order summary</p></div>
                 <div class="row productslist">
                     <div class="col sub-total"><p class="m-0">Sub total: </p></div>
-                    <div class="col"><p class="text-right" th:text="${totalprice}"></p></div>
+                    <div class="col"><p class="text-right" th:text="${totalprice} + ' ' + USD"></p></div>
                 </div>
                 <div class="row productslist">
                     <div class="col"><p class="m-0">Shipping: </p></div>
@@ -66,11 +66,11 @@
                 </div>
                 <div class="row productslist">
                     <div class="col estimated-total"><p class="m-0">Estimated total: </p></div>
-                    <div class="col"><p class="text-right">3000</p></div>
+                    <div class="col"><p class="text-right" th:text="${totalprice} + ' ' + USD"></p></div>
                     </div>
                 <div class="row productslist">
                     <form action="/payment">
-                    <div class="col productslist"><input type="submit" class="btn btn-dark" value="Proceed to payments"></div>
+                    <div class="col"><input type="submit" class="btn btn-dark" value="Proceed to payments"></div>
                     </form>
                 </div>
             </div>
