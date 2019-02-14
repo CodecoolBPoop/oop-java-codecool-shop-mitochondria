@@ -70,7 +70,7 @@
 
 .cartheader
 {
-    margin-bottom: 30px;
+    background: rgb(170,170,170,0.8); !important;
     font-size: 20px;
 }
 .col {
@@ -200,4 +200,19 @@ li.monolith span {
 
 .btn-success{
     border-radius: 10px;
+}
+
+.productslist{
+    background: rgba(204,204,204,0.8) !important;
+}
+
+.jumbotron
+{
+    background-image: url('/static/img/back.jpg');
+}
+
+
+.font-size-description
+{
+    font-size: 10px;
 }
