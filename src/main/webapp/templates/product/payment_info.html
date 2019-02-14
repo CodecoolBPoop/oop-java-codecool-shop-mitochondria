@@ -29,7 +29,7 @@
                             <label for="name"><i class="user"></i> Full Name</label>
                             <input type="text" id="name" name="firstname">
                             <label for="email"><i class="envelope"></i> Email</label>
-                            <input type="text" id="email" name="email">
+                            <input type="text" id="email" name="email" required autocomplete="email">
                             <label for="adr"><i class="address-card-o"></i> Address</label>
                             <input type="text" id="adr" name="address">
                             <label for="city"><i class="institution"></i> City</label>
@@ -42,7 +42,7 @@
 
                         <div class="col-50">
                             <h3>Payment</h3>
-                            <label for="name">Accepted Cards</label>
+                            <label>Accepted Cards</label>
                             <div class="icon-container">
                                 <i class="fa fa-cc-visa" style="color:navy;"></i>
                                 <i class="fa fa-cc-amex" style="color:blue;"></i>
@@ -51,10 +51,10 @@
                             <label for="cname">Name on Card</label>
                             <input type="text" id="cname" name="cardname">
                             <label for="ccnum">Card Number</label>
-                            <input type="text" id="ccnum" name="cardnumber">
+                            <input type="text" id="ccnum" name="cardnumber" pattern="\d*" maxlength="19">
                             <label for="expdate">Valid Thru</label>
-                            <input type="text" id="expdate" name="expdate" placeholder="MM/YY">
-                            <label for="cvv">CVV/CVC
+                            <input type="text" id="expdate" name="expdate" placeholder="MM/YY" pattern="\d*" maxlength="4">
+                            <label for="cvv">CVV/CVC</label>
                                 <span class="info">* CVV or CVC is the card security code, unique three digits number on the back of your card separate from its number.</span><br>
                             <input type="password" id="cvv" name="cvv">
                         </div>

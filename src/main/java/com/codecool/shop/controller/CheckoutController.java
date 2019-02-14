@@ -22,14 +22,9 @@ public class CheckoutController extends HttpServlet{
 
             throws ServletException, IOException {
 
-        ShoppingCart shoppingCart = ShoppingCart.getInstance();
-
-
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
-//
-        context.setVariable("shoppingcart", shoppingCart.getAll());
-        context.setVariable("totalPrice", ShoppingCart.getTotalPrice());
+
         engine.process("product/checkout.html", context, resp.getWriter());
     }
 }
