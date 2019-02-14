@@ -198,8 +198,25 @@ li.monolith span {
     border-bottom-right-radius: 10px;
 }
 
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
 .btn-success{
     border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: #45a049;
 }
 
 .productslist{
@@ -215,4 +232,42 @@ li.monolith span {
 .font-size-description
 {
     font-size: 10px;
+}
+
+
+.info {
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 50px;
+    opacity: .5;
+    color: #2e2e2e;
+}
+
+.container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
 }

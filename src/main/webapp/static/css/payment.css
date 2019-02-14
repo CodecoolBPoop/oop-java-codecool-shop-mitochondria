@@ -51,3 +51,7 @@ input[type=text] {
     opacity: .5;
     color: #2e2e2e;
 }
+
+body {
+    background-image: url('/static/img/back.jpg');
+}
