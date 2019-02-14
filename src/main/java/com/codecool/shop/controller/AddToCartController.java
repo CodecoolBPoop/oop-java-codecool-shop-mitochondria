@@ -46,7 +46,7 @@ public class AddToCartController extends HttpServlet {
                 shoppingCart.add(ProductDaoMem.getInstance().find(i));
             }
         }
-        resp.sendRedirect(req.getContextPath() + "/");
+        resp.sendRedirect(req.getContextPath() + "/products");
         System.out.println(ShoppingCart.getAll());
     }
 
