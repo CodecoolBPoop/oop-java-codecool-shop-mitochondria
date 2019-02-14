@@ -34,7 +34,7 @@ public class AddToCartController extends HttpServlet {
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
 
-        for (int i = 0; i < ProductDaoMem.getInstance().getAll().size(); i++) {
+        for (int i = 0; i < (ProductDaoMem.getInstance().getAll().size()+1); i++) {
 
             String str = Integer.toString(i);
 
