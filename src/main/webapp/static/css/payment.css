@@ -42,3 +42,12 @@ input[type=text] {
 .btn:hover {
     background-color: #45a049;
 }
+
+
+.info {
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 50px;
+    opacity: .5;
+    color: #2e2e2e;
+}
