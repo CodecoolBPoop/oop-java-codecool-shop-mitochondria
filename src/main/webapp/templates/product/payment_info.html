@@ -3,18 +3,13 @@
 <head th:replace="head.html :: copy">
 
 </head>
-
 <body>
-
-<div class="jumbotron text-center">
-    <h1>Codecool Shop</h1>
-</div>
-
+<div th:replace="menu.html :: copy"></div>
 <div class="container">
 
     <div class="row">
         <div class="col-75">
-            <div class="container">
+            <div class="container-pay">
                 <form action="/checkout">
                     <div class="row">
                         <div class="col-50" >
