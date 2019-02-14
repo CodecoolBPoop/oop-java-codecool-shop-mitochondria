@@ -72,6 +72,8 @@
 {
     background: rgb(170,170,170,0.8); !important;
     font-size: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .col {
     padding-top: 15px;
@@ -215,4 +217,10 @@ li.monolith span {
 .font-size-description
 {
     font-size: 10px;
+}
+
+.sub-total
+{
+    border-bottom: 10px;
+    border-bottom-color: black;
 }
