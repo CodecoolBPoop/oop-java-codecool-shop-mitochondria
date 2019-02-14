@@ -10,6 +10,11 @@ public class ShoppingCart {
     private static ArrayList<Product> shoppingCartList = new ArrayList<>();
     private static ShoppingCart instance = null;
     private static float totalPrice;
+    private static float totalPriceWithShipping;
+    private static float shipping1 = 30;
+    private static float shipping3 = 20;
+    private static float shipping7 = 10;
+
 
     private ShoppingCart(){
     }
@@ -46,5 +51,8 @@ public class ShoppingCart {
         return totalPrice;
     }
 
+    public static void setTotalPriceWithShipping(float shippingPrice){
+        totalPrice += shippingPrice;
+    }
 }
 

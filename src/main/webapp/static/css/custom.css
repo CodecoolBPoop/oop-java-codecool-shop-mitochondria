@@ -333,3 +333,9 @@ input[type=text] {
     height: 70px;
     width: 70px;
 }
+
+.cartheader
+{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
