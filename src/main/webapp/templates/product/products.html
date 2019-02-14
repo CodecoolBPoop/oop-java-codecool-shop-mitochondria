@@ -10,7 +10,15 @@
 <div class="container">
 
 
-    <form action="/" method="post">
+    <form action="products" method="post">
+        <select name="testName2">
+            <option th:text="${all2}"></option>
+            <div class="card" th:each="cat,iterStat : ${supplier}">
+                <option th:text="${cat.name}">
+                    Supplier Title
+                </option>
+            </div>
+        </select>
         <select name="testName">
             <option th:text="${all}"></option>
             <div class="card" th:each="cat,iterStat : ${category}">
@@ -19,9 +27,10 @@
                 </option>
             </div>
         </select>
-        <button type="submit">Submit
+        <button type="submit"  >Submit
         </button>
     </form>
+
 
 
     <!--<div class="card">-->

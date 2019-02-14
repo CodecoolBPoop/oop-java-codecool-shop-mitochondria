@@ -21,7 +21,7 @@
                                     <p><a href="#" th:text="${prod.getName()}">*products in cart</a> <span class="price" th:text="${prod.getPrice()}">*prize of the product*</span></p>
                                     <hr>
                                 </div>
-                            <p>Total <span class="price" style="color:black"><b>*total prize*</b></span></p>
+                            <p>Total USD: <span class="price" style="color:black" th:text="${totalPrice}"><b>*total price*</b></span></p>
                         </div>
 
                         <div class="col-50">
@@ -50,14 +50,13 @@
                             </div>
                             <label for="cname">Name on Card</label>
                             <input type="text" id="cname" name="cardname">
-                            <label for="ccnum">Card number</label>
+                            <label for="ccnum">Card Number</label>
                             <input type="text" id="ccnum" name="cardnumber">
-                            <label for="expmonth">Exp Month</label>
-                            <input type="text" id="expmonth" name="expmonth">
-                            <label for="expyear">Exp Year</label>
-                            <input type="text" id="expyear" name="expyear">
-                            <label for="cvv">CVV</label>
-                            <input type="text" id="cvv" name="cvv">
+                            <label for="expdate">Valid Thru</label>
+                            <input type="text" id="expdate" name="expdate" placeholder="MM/YY">
+                            <label for="cvv">CVV/CVC
+                                <span class="info">* CVV or CVC is the card security code, unique three digits number on the back of your card separate from its number.</span><br>
+                            <input type="password" id="cvv" name="cvv">
                         </div>
                     </div>
                     <label>

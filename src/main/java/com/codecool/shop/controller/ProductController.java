@@ -43,7 +43,7 @@ public class ProductController extends HttpServlet {
         context.setVariable("category", productCategoryDataStore.getAll());
         context.setVariable("products", productDataStore.getAll());
         context.setVariable("supplier", supplierDataStore.getAll());
-        context.setVariable("shoppingcart", shoppingCart.getAll());
+        context.setVariable("shoppingcart", ShoppingCart.getAll());
         context.setVariable("all", "All Category");
         context.setVariable("all2", "All Suppliers");
         engine.process("product/products.html", context, resp.getWriter());
@@ -90,7 +90,7 @@ public class ProductController extends HttpServlet {
         context.setVariable("shoppingcart", ShoppingCart.getAll());
         context.setVariable("all", "All Categories");
         context.setVariable("all2", "All Suppliers");
-        engine.process("product/index.html", context, resp.getWriter());
+        engine.process("product/products.html", context, resp.getWriter());
     }
 
 }
