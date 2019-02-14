@@ -8,8 +8,8 @@ public class ShoppingCart {
 
 
     private static ArrayList<Product> shoppingCartList = new ArrayList<>();
-
     private static ShoppingCart instance = null;
+    private static float totalPrice;
 
     private ShoppingCart(){
     }
@@ -23,7 +23,10 @@ public class ShoppingCart {
 
     public void add(Product product){
 
+
         shoppingCartList.add(product);
+        setTotalPrice(product.getFloatPrice());
+
     }
 
     public void remove(Product product){
@@ -33,6 +36,14 @@ public class ShoppingCart {
 
     public static ArrayList<Product> getAll(){
         return shoppingCartList;
+    }
+
+    public static void setTotalPrice(float addedPrice){
+        totalPrice += addedPrice;
+    }
+
+    public static float getTotalPrice(){
+        return totalPrice;
     }
 
 }
