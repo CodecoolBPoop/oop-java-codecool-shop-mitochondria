@@ -2,9 +2,6 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="head.html :: copy">
 
-
-<head th:replace="head.html :: copy">
-
 </head>
 
 <body>
@@ -36,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 mb-5">
             <div class="container" style="margin-top: 50px">
                 <div class="row cartheader font-weight-bold"><p class="text-center w-100">Order summary</p></div>
                 <div class="row productslist">
@@ -78,6 +75,8 @@
     </div>
 </div>
 </div>
+
+<div th:replace="footer.html :: copy"></div>
 
 </body>
 </html>
