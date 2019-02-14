@@ -221,6 +221,11 @@ li.monolith span {
 
 .sub-total
 {
-    border-bottom: 10px;
-    border-bottom-color: black;
+    border-bottom: 10px black; !important;
+}
+
+.cart-product-img{
+    border: 3px black;
+    height: 70px;
+    width: 70px;
 }

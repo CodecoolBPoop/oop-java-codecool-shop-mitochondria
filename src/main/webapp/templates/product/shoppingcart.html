@@ -22,7 +22,8 @@
             </div>
             <div class="productslist" th:each="cart,iterStat : ${shoppingcart}">
                 <div class="row">
-                    <div class="col">Image</div>
+                    <div class="col">   <img class="cart-product-img" src="http://placehold.it/400x250/000/fff"
+                                          th:attr="src='/static/img/product_' + ${cart.getId()} + '.png'" alt=""/></div>
                     <div class="col">
                         <div class="row font-weight-bold" th:text="${cart.name}"></div>
                         <div class="row font-size-description" th:text="${cart.description}"></div>
@@ -37,8 +38,7 @@
             <div class="container" style="margin-top: 50px">
                 <div class="row cartheader font-weight-bold"><p class="text-center w-100">Order summary</p></div>
                 <div class="row productslist">
-                    <div class="card">
-                    <div class="col "><p class="m-0">Sub total: </p></div>
+                    <div class="col sub-total"><p class="m-0">Sub total: </p></div>
                     <div class="col"><p class="text-right" th:text="${totalprice}"></p></div>
                 </div>
                 <div class="row productslist">
@@ -61,6 +61,13 @@
                         <input style="margin-left: auto; margin-right: auto"  type="checkbox">
                     </div>
                     <div class="col"><span>Next business day</span></div>
+                </div>
+                <div class="row productslist">
+                    <div class="col estimated-total"><p class="m-0">Estimated total: </p></div>
+                    <div class="col"><p class="text-right">3000</p></div>
+                    </div>
+                <div class="row">
+                    <div class="col productslist"><button type="button" class="btn btn-dark">Proceed to payment</button></div>
                 </div>
             </div>
         </div>
