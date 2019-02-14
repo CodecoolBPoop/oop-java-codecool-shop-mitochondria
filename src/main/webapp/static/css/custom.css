@@ -342,3 +342,11 @@ input[type=text] {
 
 .shopping-link
 {color: #428bca}
+
+.differenta{
+    color: #428bca !important;
+}
+
+.btn{
+    background: #4CAF50;
+}

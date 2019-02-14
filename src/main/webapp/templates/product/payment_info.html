@@ -18,7 +18,7 @@
                                     <span class="price" style="color:black">
                                     <i class="shopping-cart"></i>
                                     </span>
-                                    <p><a href="#" th:text="${prod.getName()}">*products in cart</a> <span class="price" th:text="${prod.getPrice()}">*prize of the product*</span></p>
+                                    <p><a class="differenta" href="#" th:text="${prod.getName()}">*products in cart</a> <span class="price" th:text="${prod.getPrice()}">*prize of the product*</span></p>
                                     <hr>
                                 </div>
                             <p>Total USD: <span class="price" style="color:black" th:text="${totalPrice}"><b>*total price*</b></span></p>
@@ -62,7 +62,9 @@
                     <label>
                         <input type="checkbox" checked="checked" name="sameadr">Shipping address same as billing
                     </label>
-                    <input type="submit" value="Pay and Checkout!" class="btn">
+                    <div>
+                        <input type="submit" value="Pay and Checkout!" class="btn-success">
+                    </div>
                 </form>
         </div>
 
