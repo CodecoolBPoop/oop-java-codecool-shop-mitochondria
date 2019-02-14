@@ -21,16 +21,15 @@ import java.io.IOException;
 @WebServlet(urlPatterns = {"/"})
 public class ProductController extends HttpServlet {
 
+    ProductDao productDataStore = ProductDaoMem.getInstance();
+    ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
+    SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
+    ShoppingCart shoppingCart = ShoppingCart.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 
             throws ServletException, IOException {
-
-
-        ProductDao productDataStore = ProductDaoMem.getInstance();
-        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
-        SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
-        ShoppingCart shoppingCart = ShoppingCart.getInstance();
 
 //        Map params = new HashMap<>();
 //        params.put("category", productCategoryDataStore.find(1));
@@ -56,20 +55,13 @@ public class ProductController extends HttpServlet {
         String testText = req.getParameter("testName");
 
 
-
-        ProductDao productDataStore = ProductDaoMem.getInstance();
-        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
-        SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
-        ShoppingCart shoppingCart = ShoppingCart.getInstance();
-
-
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
 
         if (testText.equalsIgnoreCase("All Category")) {
             context.setVariable("products", productDataStore.getAll());
         } else {
-            context.setVariable("products", productDataStore.getBy(productCategoryDataStore.findCategoryByName(testText)));
+            context.setVariable("products", productDataStore.getBy(productCategoryDataStore.findByName(testText)));
         }
 
         context.setVariable("category", productCategoryDataStore.getAll());
