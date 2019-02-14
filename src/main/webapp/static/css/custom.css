@@ -348,5 +348,7 @@ input[type=text] {
 }
 
 .btn{
-    background: #4CAF50;
+    background: rgba(38,38,38,0.95);
 }
+
+.btn
