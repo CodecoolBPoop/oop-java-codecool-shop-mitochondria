@@ -10,19 +10,31 @@
         <div class="menu">
             <ul>
                 <li class="monolith"><span>Webshop Universe</span></li>
-                <li class="mover moon-3"><span>Home</span></li>
-                <li class="mover moon-2"><span>Products</span></li>
-                <li class="mover moon-1"><span>Cart</span></li>
-                <li class="mover moon-4"><span>Globes</span></li>
-                <li class="mover moon-5"><span>Stars</span></li>
-                <li class="mover moon-6"><span>Black Holes</span></li>
-                <li class="mover moon-7"><span>Payment</span></li>
+                <li class="mover moon-3"><a href="/"><span>Home</span></a></li>
+                <li class="mover moon-2"><a href="products"><span>Products</span></a></li>
+                <li class="mover moon-1"><a href="cartreview"><span>Cart</span></a></li>
+                <li class="mover moon-4"><a href="globes"><span>Globes</span></a></li>
+                <li class="mover moon-5"><a href="stars"><span>Stars</span></a></li>
+                <li class="mover moon-6"><a href="blackholes"><span>Black Holes</span></a></li>
+                <li class="mover moon-7"><a href="payment"><span>Payment</span></a></li>
 
             </ul>
 
 
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('ul').roundabout({
+                minZ: 100,
+                maxZ: 300,
+                minOpacity: 1,
+                minScale: 0.6,
+                childSelector: '.mover',
+                tilt: -4
+            });
+        });
+    </script>
 </div>
 </body>
 </html>
