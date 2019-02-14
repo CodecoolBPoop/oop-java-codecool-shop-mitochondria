@@ -33,6 +33,7 @@ public class ShoppingCartReviewController extends HttpServlet {
 
         context.setVariable("shoppingcart", ShoppingCart.getAll());
         context.setVariable("totalprice", ShoppingCart.getTotalPrice());
+        context.setVariable("totalpricewithshipping", ShoppingCart.getTotalPriceWithShipping());
         engine.process("product/shoppingcart.html", context, resp.getWriter());
     }
 }
