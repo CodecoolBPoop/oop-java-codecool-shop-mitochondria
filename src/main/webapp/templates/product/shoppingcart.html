@@ -2,15 +2,71 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="head.html :: copy">
 
+
+<head th:replace="head.html :: copy">
+
 </head>
 
 <body>
 <div th:replace="menu.html :: copy"></div>
-
-<div class="card" th:each="cat,iterStat : ${shoppingcart}">
-    <p th:text="${cat.name}"></p>
-    <p th:text="${totalprice}"></p>
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="cartheader">
+                <div class="row font-weight-bold"><p class="text-center w-100">Shopping Cart</p></div>
+                <div class="row">
+                    <div class="col">Product</div>
+                    <div class="col">Name</div>
+                    <div class="col">Price</div>
+                    <div class="col">Product total</div>
+                    <div class="col">Quantity</div>
+                </div>
+            </div>
+            <div class="productslist" th:each="cart,iterStat : ${shoppingcart}">
+                <div class="row">
+                    <div class="col">Image</div>
+                    <div class="col">
+                        <div class="row font-weight-bold" th:text="${cart.name}"></div>
+                        <div class="row font-size-description" th:text="${cart.description}"></div>
+                    </div>
+                    <div class="col" th:text="${cart.getDefaultPrice()}"></div>
+                    <div class="col">160</div>
+                    <div class="col">1</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="container">
+                <div class="row cartheader font-weight-bold"><p class="text-center w-100">Order summary</p></div>
+                <div class="row productslist">
+                    <div class="col"><p class="m-0">Sub total: </p></div>
+                    <div class="col"><p class="text-right" th:text="${totalprice}"></p></div>
+                </div>
+                <div class="row productslist">
+                    <div class="col"><p class="m-0">Shipping: </p></div>
+                </div>
+                <div class="row check-box productslist">
+                    <div class="col">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col"><span>3-7 business days</span></div>
+                </div>
+                <div class="row check-box productslist">
+                    <div class="col">
+                        <input type="checkbox">
+                    </div>
+                    <div class="col"><span>Second business day</span></div>
+                </div>
+                <div class="row check-box productslist">
+                    <div class="col">
+                        <input style="margin-left: auto; margin-right: auto"  type="checkbox">
+                    </div>
+                    <div class="col"><span>Next business day</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 </body>
