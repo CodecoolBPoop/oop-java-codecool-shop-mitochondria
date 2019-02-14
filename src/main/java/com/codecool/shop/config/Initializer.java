@@ -55,6 +55,5 @@ public class Initializer implements ServletContextListener {
         productDataStore.add(new Product("Sagittarius A", 479, "USD", "Its in the center of the Milky Way. Supermassive black hole.", blackhole, empire));
 
 
-        shoppingCart.add(productDataStore.find(1));
     }
 }
