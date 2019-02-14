@@ -45,7 +45,7 @@ public class Initializer implements ServletContextListener {
         //setting up products and printing it
         productDataStore.add(new Product("Sol", 398.8f, "USD", "A really young and shiny star. Nice yellow color.", star, empire));
         productDataStore.add(new Product("Rigel", 479, "USD", "The shiniest star of the Orion. Nice blue color.", star, republic));
-        productDataStore.add(new Product("Arcturus", 689, "USD", "A huge old red star. A little bit old.", star, empire));
+        productDataStore.add(new Product("Arcturus", 689, "USD", "A huge red star. A little bit old.", star, empire));
         productDataStore.add(new Product("Sirius B", 557, "USD", "This is a big binary star in the Canis Majoris. Shiny white color.", star, republic));
         productDataStore.add(new Product("Earth", 199.9f, "USD", "Fantastic price. A lot of inhabitors included. Great landscapes, and different seasons.", planet, empire));
         productDataStore.add(new Product("Mars", 179, "USD", "A little bit dusty, low water and oxigen. Nice red color. Has a lot of potential.", planet, republic));
