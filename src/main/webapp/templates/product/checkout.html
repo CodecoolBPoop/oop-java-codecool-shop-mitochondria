@@ -10,19 +10,18 @@
     <h1>Codecool Shop</h1>
 </div>
 
-<div class="container">
-
-    <div class="row">
-        <div class="col-75">
-            <div class="container">
-
-            </div>
-
-        </div>
-
+<div class="card">
+    <div class="container-pay">
+        <h2 align="center"> Thank you for your purchase!</h2><br>
+        <h2 align="center"> We sent you an email confirmation of your order!</h2>
+        <form action="/products">
+        <input type="submit" class="btn" value="Continue Shopping!">
+        </form>
     </div>
+</div>
 
-    <div th:replace="footer.html :: copy"></div>
+
+<div th:replace="footer.html :: copy"></div>
 
 </body>
 </html>
