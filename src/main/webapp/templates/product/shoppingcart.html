@@ -31,7 +31,7 @@
                         <div class="row font-size-description" th:text="${cart.description}"></div>
                     </div>
                     <div class="col" th:text="${cart.getDefaultPrice()} + ' ' + USD"></div>
-                    <div class="col">0.0 USD</div>
+                    <div class="col" th:text="${cart.getDefaultPrice()} + ' ' + USD"></div>
                     <div class="col">1</div>
                 </div>
             </div>
