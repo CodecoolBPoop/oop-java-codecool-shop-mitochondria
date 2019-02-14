@@ -11,9 +11,9 @@ public class ShoppingCart {
     private static ShoppingCart instance = null;
     private static float totalPrice;
     private static float totalPriceWithShipping;
-    private static float shipping1 = 30;
-    private static float shipping3 = 20;
-    private static float shipping7 = 10;
+    public static float shipping1 = 30;
+    public static float shipping3 = 20;
+    public static float shipping7 = 10;
 
 
     private ShoppingCart(){
@@ -54,5 +54,10 @@ public class ShoppingCart {
     public static void setTotalPriceWithShipping(float shippingPrice){
         totalPrice += shippingPrice;
     }
+
+    public static float getTotalPriceWithShipping(){
+        return totalPriceWithShipping;
+    }
+
 }
 
