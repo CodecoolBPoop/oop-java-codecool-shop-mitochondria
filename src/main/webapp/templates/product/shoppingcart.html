@@ -83,12 +83,23 @@
     let pluses = document.querySelectorAll(".fa-plus-circle");
     for (let plus of pluses){
         plus.addEventListener('click', function () {
-            let quantity = this.parentNode.childNodes[0].innerHTML;
+            let quantity = this.parentNode.childNodes[0];
+            let quantity_content = quantity.innerHTML;
+            quantity.innerHTML = parseInt(quantity_content) + 1;
             console.log(quantity);
-            quantity.innerHTML +=  1;
-
         })
     }
+
+    let minuses = document.querySelectorAll(".fa-minus-circle");
+    for (let minus of minuses){
+        minus.addEventListener('click', function () {
+            let quantity = this.parentNode.childNodes[0];
+            let quantity_content = quantity.innerHTML;
+            quantity.innerHTML = parseInt(quantity_content) - 1;
+            console.log(quantity);
+        })
+    }
+
 
 </script>
 </body>
