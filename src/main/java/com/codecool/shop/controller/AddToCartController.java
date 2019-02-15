@@ -24,7 +24,8 @@ import java.util.Map;
 public class AddToCartController extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+        throws ServletException, IOException {
 
         ShoppingCart shoppingCart = ShoppingCart.getInstance();
 
