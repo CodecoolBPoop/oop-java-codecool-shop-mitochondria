@@ -24,12 +24,9 @@ import java.util.Map;
 public class AddToCartController extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         ShoppingCart shoppingCart = ShoppingCart.getInstance();
-
 
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
@@ -45,5 +42,4 @@ public class AddToCartController extends HttpServlet {
         resp.sendRedirect(req.getContextPath() + "/products");
         System.out.println(ShoppingCart.getAll());
     }
-
 }
