@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="head.html :: copy">
+
+</head>
+
+<body>
+
+<div class="jumbotron text-center">
+    <h1>Codecool Shop</h1>
+</div>
+
+<div class="card">
+    <div class="container-pay">
+        <h2 align="center"> Thank you for your purchase!</h2><br>
+        <h2 align="center"> A verification link has been sent to your email account!</h2>
+        <form action="/products">
+        <input align="center" type="submit" class="btn-success" value="Continue Shopping!">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

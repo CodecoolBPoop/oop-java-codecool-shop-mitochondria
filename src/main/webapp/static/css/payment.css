@@ -20,7 +20,7 @@ input[type=text] {
     border-radius: 3px;
 }
 
-.container {
+.container-pay {
     background-color: #f2f2f2;
     padding: 5px 20px 15px 20px;
     border: 1px solid lightgrey;
@@ -41,4 +41,17 @@ input[type=text] {
 
 .btn:hover {
     background-color: #45a049;
+}
+
+
+.info {
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 50px;
+    opacity: .5;
+    color: #2e2e2e;
+}
+
+body {
+    background-image: url('/static/img/back.jpg');
 }
