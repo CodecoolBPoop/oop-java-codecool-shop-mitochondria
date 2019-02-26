@@ -14,12 +14,24 @@ import com.codecool.shop.model.Supplier;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import java.sql.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebListener
 public class Initializer implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+
+        Map<String, String> connectionData = new HashMap<>();
+        connectionData.put("driver", "org.postgresql.Driver");
+        connectionData.put("url", "jdbc:postgresql://localhost:5432/codecoolshop");
+        connectionData.put("user", "Nami");
+        connectionData.put("password", "tihaennem");
+        ConnectionUtil.getInstance().connfig(connectionData);
+        Connection connection =  ConnectionUtil.getInstance().getConnection();
+
         ProductDao productDataStore = ProductDaoMem.getInstance();
         ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
