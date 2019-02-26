@@ -39,6 +39,18 @@ public class ProductDaoMemTest {
         }
     }
 
+
+    @Test
+    void testFind() {
+
+        Product product = new Product("testProd", 49.9f, "USD", "test.", testCategory, testSupplier);
+        product.setId(1);
+
+        productDao.add(product);
+        assertEquals(productDao.find(1), product);
+    }
+
+
     @Test
     void testRemove() {
 
