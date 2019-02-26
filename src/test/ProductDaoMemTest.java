@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class ProductDaoMemTest {
 
@@ -36,6 +37,18 @@ public class ProductDaoMemTest {
         for (int i = 1; i < 10; i++) {
             productDao.remove(i);
         }
+    }
+
+    @Test
+    void testRemove() {
+
+        Product product = new Product("testProd", 49.9f, "USD", "test.", testCategory, testSupplier);
+        product.setId(5);
+        productDao.add(product);
+
+        productDao.remove(5);
+
+        assertNull(productDao.find(5));
     }
 
 
