@@ -46,15 +46,15 @@ public class ProductDaoMemTest {
     }
 
 
-    @Test
-    void testAddV2() {
-
-        List<Product> products = new ArrayList<>();
-
-        products.add(testProduct1);
-
-        assertEquals(testProduct1, products.get(0));
-    }
+//    @Test
+//    void testAddV2() {
+//
+//        List<Product> products = new ArrayList<>();
+//
+//        products.add(testProduct1);
+//
+//        assertEquals(testProduct1, products.get(0));
+//    }
 
 
     @Test
