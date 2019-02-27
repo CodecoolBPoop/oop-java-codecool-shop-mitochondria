@@ -2,6 +2,7 @@ package com.codecool.shop.dao.implementation;
 
 
 import com.codecool.shop.dao.ProductCategoryDao;
+import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class ProductCategoryDaoMem implements ProductCategoryDao {
 
     private List<ProductCategory> data = new ArrayList<>();
     private static ProductCategoryDaoMem instance = null;
+    private static ProductCategoryDaoMem testInstance = null;
 
     /* A private Constructor prevents any other class from instantiating.
      */
@@ -23,6 +25,13 @@ public class ProductCategoryDaoMem implements ProductCategoryDao {
             instance = new ProductCategoryDaoMem();
         }
         return instance;
+    }
+
+    public static ProductCategoryDaoMem getTestInstance() {
+        if (testInstance == null) {
+            testInstance = new ProductCategoryDaoMem();
+        }
+        return testInstance;
     }
 
     @Override
