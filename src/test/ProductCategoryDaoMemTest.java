@@ -35,7 +35,21 @@ public class ProductCategoryDaoMemTest {
 
         assertEquals(productCategoryDao.getAll(), categories);
     }
+
+
+    @Test
+    void testFindByName() {
+
+        productCategoryDao.add(testCategory1);
+
+        assertEquals(productCategoryDao.findByName("testCategory1"), testCategory1);
+    }
 }
 
 
 // private List<ProductCategory> data = new ArrayList<>();
+
+//    @Override
+//    public ProductCategory findByName(String cat) {
+//        return data.stream().filter(t -> Objects.equals(t.getName(), cat)).findFirst().orElse(null);
+//    }
