@@ -60,6 +60,3 @@ public class ProductCategoryDaoMemTest {
 
 
 // private List<ProductCategory> data = new ArrayList<>();
-//   public void remove(int id) {
-//        data.remove(find(id));
-//    }
