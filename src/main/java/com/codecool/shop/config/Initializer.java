@@ -27,8 +27,8 @@ public class Initializer implements ServletContextListener {
         Map<String, String> connectionData = new HashMap<>();
         connectionData.put("driver", "org.postgresql.Driver");
         connectionData.put("url", "jdbc:postgresql://localhost:5432/codecoolshop");
-        connectionData.put("user", "Nami");
-        connectionData.put("password", "tihaennem");
+        connectionData.put("user", "postgres");
+        connectionData.put("password", "1987Epiphone");
         ConnectionUtil.getInstance().connfig(connectionData);
         Connection connection =  ConnectionUtil.getInstance().getConnection();
 
