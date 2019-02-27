@@ -3,6 +3,7 @@ import com.codecool.shop.dao.implementation.ProductDaoMem;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -22,6 +23,14 @@ public class ProductDaoMemTest {
     private Product testProduct1 = new Product("testProd1", 9.9f, "USD", "test.", testCategory1, testSupplier1);
     private Product testProduct2 = new Product("testProd2", 4.9f, "USD", "test.", testCategory2, testSupplier2);
     private List<Product> testProducts = Arrays.asList(testProduct1, testProduct2);
+
+
+    @BeforeEach
+    void clearTestDao() {
+        for (int i = 0; i < 10; i++) {
+            productDao.remove(i);
+        }
+    }
 
 
     @Test
@@ -83,6 +92,10 @@ public class ProductDaoMemTest {
     void testGetAll() {
 
         List<Product> testProducts = Arrays.asList(testProduct1, testProduct2);
+
+        for (int i = 0; i < 20; i++) {
+            productDao.remove(i);
+        }
 
         productDao.add(testProduct1);
         productDao.add(testProduct2);
