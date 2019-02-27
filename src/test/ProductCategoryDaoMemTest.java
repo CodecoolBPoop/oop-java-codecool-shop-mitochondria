@@ -19,7 +19,7 @@ public class ProductCategoryDaoMemTest {
 
 
     @BeforeEach
-    void clearTestDao () {
+    void clearTestDao() {
         for (int i = 0; i < 10; i++) {
             productCategoryDao.remove(i);
         }

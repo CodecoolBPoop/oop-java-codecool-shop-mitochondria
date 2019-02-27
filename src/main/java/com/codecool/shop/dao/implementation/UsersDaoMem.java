@@ -11,6 +11,7 @@ public class UsersDaoMem implements UsersDao {
 
     private List<Users> data = new ArrayList<>();
     private static UsersDaoMem instance = null;
+    private static UsersDaoMem testInstance = null;
 
     /* A private Constructor prevents any other class from instantiating.
      */
@@ -22,6 +23,13 @@ public class UsersDaoMem implements UsersDao {
             instance = new UsersDaoMem();
         }
         return instance;
+    }
+
+    public static UsersDaoMem getTestInstance() {
+        if (testInstance == null) {
+            testInstance = new UsersDaoMem();
+        }
+        return testInstance;
     }
 
     @Override
