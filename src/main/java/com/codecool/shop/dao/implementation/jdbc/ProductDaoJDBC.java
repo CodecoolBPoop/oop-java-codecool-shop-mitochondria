@@ -7,6 +7,7 @@ import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -59,7 +60,18 @@ public class ProductDaoJDBC implements ProductDao {
 
     @Override
     public List<Product> getAll() {
-        return null;
+        ArrayList<Product> everyProduct = new ArrayList<>();
+
+        try {
+            String sql = "select * from product";
+            PreparedStatement preppedStmnt = connection.conn.prepareStatement(sql);
+            ResultSet results = preppedStmnt.executeQuery();
+            everyProduct = collectProductsToList(results);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return everyProduct;
     }
 
     @Override
@@ -70,6 +82,19 @@ public class ProductDaoJDBC implements ProductDao {
     @Override
     public List<Product> getBy(ProductCategory productCategory) {
         return null;
+    }
+
+    private ArrayList<Product> collectProductsToList(ResultSet results) throws SQLException {
+        ArrayList<Product> everyProduct = new ArrayList<>();
+        while (results.next()) {
+            Product current = new Product();
+            current.setId(results.getInt("id"));
+            current.setName(results.getString("name"));
+            current.setDescription(results.getString("description"));
+            current.setPrice(results.getFloat("price"), "USD");
+            everyProduct.add(current);
+        }
+        return everyProduct;
     }
 
 }
