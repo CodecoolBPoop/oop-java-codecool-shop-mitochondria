@@ -39,6 +39,17 @@ public class ProductCategoryDaoMemTest {
 
 
     @Test
+    void testFindById() {
+
+        testCategory1.setId(1);
+        productCategoryDao.add(testCategory1);
+        productCategoryDao.add(testCategory2);
+
+        assertEquals(productCategoryDao.find(1), testCategory1);
+    }
+
+
+    @Test
     void testFindByName() {
 
         productCategoryDao.add(testCategory1);
@@ -54,7 +65,7 @@ public class ProductCategoryDaoMemTest {
         productCategoryDao.add(testCategory1);
         productCategoryDao.remove(1);
 
-        assertNull(productCategoryDao.findByName("testCategory1"));
+        assertNull(productCategoryDao.findByName(testCategory1.getName()));
     }
 
 
