@@ -56,7 +56,16 @@ public class ProductCategoryDaoMemTest {
 
         assertNull(productCategoryDao.findByName("testCategory1"));
     }
+
+
+    @Test
+    void testGetAll() {
+
+        productCategoryDao.add(testCategory1);
+        productCategoryDao.add(testCategory2);
+
+        List<ProductCategory> testList = Arrays.asList(testCategory1, testCategory2);
+
+        assertEquals(productCategoryDao.getAll(), testList);
+    }
 }
-
-
-// private List<ProductCategory> data = new ArrayList<>();

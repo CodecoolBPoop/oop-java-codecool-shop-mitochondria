@@ -82,13 +82,12 @@ public class ProductDaoMemTest {
     @Test
     void testGetAll() {
 
-        List<Product> products1 = Arrays.asList(testProduct1, testProduct2);
+        List<Product> testProducts = Arrays.asList(testProduct1, testProduct2);
 
-        List<Product> products2 = new ArrayList<>();
-        products2.add(testProduct1);
-        products2.add(testProduct2);
+        productDao.add(testProduct1);
+        productDao.add(testProduct2);
 
-        assertEquals(products1, products2);
+        assertEquals(productDao.getAll(), testProducts);
     }
 
 
