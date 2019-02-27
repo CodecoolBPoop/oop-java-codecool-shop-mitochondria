@@ -1,5 +1,6 @@
 package com.codecool.shop.dao.implementation;
 
+import com.codecool.shop.model.Supplier;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,26 +18,21 @@ class SupplierDaoMemTest {
     }
 
     @Test
-    void getInstance() {
+    public void testSupplierIDNotNull(){
+        Supplier supplier = new Supplier("test case", "test description");
+        assertNotNull(supplier.getId());
     }
 
     @Test
-    void add() {
+    public void testNameNotNull(){
+        Supplier supplier = new Supplier("test name", "test description2");
+        assertNotNull(supplier.getName());
     }
 
     @Test
-    void find() {
+    public void testAddSupplier(){
+        Supplier supplier = new Supplier("test name", "test description");
+
     }
 
-    @Test
-    void findByName() {
-    }
-
-    @Test
-    void remove() {
-    }
-
-    @Test
-    void getAll() {
-    }
 }
