@@ -3,7 +3,6 @@ import com.codecool.shop.dao.implementation.ProductDaoMem;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -18,9 +17,10 @@ public class ProductDaoMemTest {
     private ProductDao productDao = ProductDaoMem.getTestInstance();
     private Supplier testSupplier1 = new Supplier("testSupplier1", "test");
     private Supplier testSupplier2 = new Supplier("testSupplier2", "test");
-    private ProductCategory testCategory = new ProductCategory("testCategory", "testDepartment", "test");
-    private Product testProduct1 = new Product("testProd1", 9.9f, "USD", "test.", testCategory, testSupplier1);
-    private Product testProduct2 = new Product("testProd2", 4.9f, "USD", "test.", testCategory, testSupplier2);
+    private ProductCategory testCategory1 = new ProductCategory("testCategory", "testDepartment", "test");
+    private ProductCategory testCategory2 = new ProductCategory("testCategory", "testDepartment", "test");
+    private Product testProduct1 = new Product("testProd1", 9.9f, "USD", "test.", testCategory1, testSupplier1);
+    private Product testProduct2 = new Product("testProd2", 4.9f, "USD", "test.", testCategory2, testSupplier2);
     private List<Product> testProducts = Arrays.asList(testProduct1, testProduct2);
 
 
@@ -28,7 +28,7 @@ public class ProductDaoMemTest {
     void testAdd() {
 
         for (int i = 0; i < 10; i++) {
-            Product product = new Product("testProd" + i, 49.9f, "USD", "test.", testCategory, testSupplier1);
+            Product product = new Product("testProd" + i, 49.9f, "USD", "test.", testCategory1, testSupplier1);
             productDao.add(product);
         }
 
@@ -54,8 +54,6 @@ public class ProductDaoMemTest {
         products.add(testProduct1);
 
         assertEquals(testProduct1, products.get(0));
-
-        products.remove(testProduct1);
     }
 
 
@@ -71,7 +69,7 @@ public class ProductDaoMemTest {
     @Test
     void testRemove() {
 
-        Product product = new Product("testProd", 49.9f, "USD", "test.", testCategory, testSupplier1);
+        Product product = new Product("testProd", 49.9f, "USD", "test.", testCategory1, testSupplier1);
         product.setId(5);
         productDao.add(product);
 
@@ -103,9 +101,24 @@ public class ProductDaoMemTest {
         productDao.add(testProduct2);
 
         assertEquals(productDao.getBy(testSupplier1), testList);
+
+        productDao.remove(1);
+        productDao.remove(2);
+    }
+
+
+    @Test
+    void testGetByProductCategory() {
+
+        List<Product> testList = Arrays.asList(testProduct1);
+
+        productDao.add(testProduct1);
+        productDao.add(testProduct2);
+
+        assertEquals(productDao.getBy(testCategory1), testList);
+
+        productDao.remove(1);
+        productDao.remove(2);
     }
 
 }
-
-
-
