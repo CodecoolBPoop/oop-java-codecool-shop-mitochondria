@@ -4,6 +4,7 @@ import com.codecool.shop.model.ProductCategory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -44,12 +45,21 @@ public class ProductCategoryDaoMemTest {
 
         assertEquals(productCategoryDao.findByName("testCategory1"), testCategory1);
     }
+
+
+    @Test
+    void testRemoveById() {
+
+        testCategory1.setId(1);
+        productCategoryDao.add(testCategory1);
+        productCategoryDao.remove(1);
+
+        assertNull(productCategoryDao.findByName("testCategory1"));
+    }
 }
 
 
 // private List<ProductCategory> data = new ArrayList<>();
-
-//    @Override
-//    public ProductCategory findByName(String cat) {
-//        return data.stream().filter(t -> Objects.equals(t.getName(), cat)).findFirst().orElse(null);
+//   public void remove(int id) {
+//        data.remove(find(id));
 //    }
