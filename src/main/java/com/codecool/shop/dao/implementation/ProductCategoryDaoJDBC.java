@@ -6,6 +6,9 @@ import com.codecool.shop.model.ProductCategory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductCategoryDaoJDBC implements ProductCategoryDao {
@@ -16,6 +19,7 @@ public class ProductCategoryDaoJDBC implements ProductCategoryDao {
 
     // A private Constructor prevents any other class from instantiating.
     private ProductCategoryDaoJDBC() {
+        connection = ConnectionUtil.getInstance().getConnection();
 
     }
 
@@ -40,6 +44,20 @@ public class ProductCategoryDaoJDBC implements ProductCategoryDao {
 
     @Override
     public ProductCategory find(int id) {
+        ProductCategory productCategory;
+        try{
+            PreparedStatement st = connection.prepareStatement("SELECT * FROM product_category WHERE id = ?");
+            st.setInt(1, id);
+            ResultSet rs = st.executeQuery();
+
+            if (rs.next()){
+                productCategory = new ProductCategory(rs.getString("name"), rs.getString("department"), rs.getString("description"));
+                productCategory.setId(rs.getInt("id"));
+                return productCategory;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
         return null;
     }
 
@@ -55,6 +73,28 @@ public class ProductCategoryDaoJDBC implements ProductCategoryDao {
 
     @Override
     public List<ProductCategory> getAll() {
-        return null;
+        List<ProductCategory> allProductCategory = new ArrayList<>();
+        PreparedStatement st = null;
+        ProductCategory productCategory;
+        try {
+            st = connection.prepareStatement("SELECT * FROM product_category");
+
+            ResultSet rs = null;
+
+            rs = st.executeQuery();
+
+
+            while (rs.next()) {
+                productCategory = new ProductCategory(rs.getString("name"),rs.getString("department"), rs.getString("description"));
+                productCategory.setId(rs.getInt("id"));
+                allProductCategory.add(productCategory);
+
+
+                connection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return allProductCategory;
     }
 }
