@@ -1,5 +1,6 @@
 package com.codecool.shop.controller;
 
+import com.codecool.shop.dao.implementation.jdbc.ProductDaoJDBC;
 import com.codecool.shop.dao.implementation.mem.ProductDaoMem;
 import com.codecool.shop.config.TemplateEngineUtil;
 import com.codecool.shop.dao.implementation.mem.ShoppingCart;
