@@ -5,10 +5,8 @@ import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.dao.SupplierDao;
 import com.codecool.shop.dao.implementation.jdbc.ProductDaoJDBC;
 import com.codecool.shop.dao.implementation.mem.ProductCategoryDaoMem;
-import com.codecool.shop.dao.implementation.mem.ProductDaoMem;
 import com.codecool.shop.dao.implementation.mem.ShoppingCart;
 import com.codecool.shop.dao.implementation.mem.SupplierDaoMem;
-import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
 
@@ -54,7 +52,7 @@ public class Initializer implements ServletContextListener {
 //        productDataStore.add(new Product("Messier 32", 243, "USD", "It was a huge galaxy once, now its just a black hole, but the price is really low.", blackhole, empire));
 //        productDataStore.add(new Product("NGC 3377", 496.9f, "USD", "Fantastic price. Supermassive black hole.", blackhole, republic));
 //        productDataStore.add(new Product("Sagittarius A", 479, "USD", "Its in the center of the Milky Way. Supermassive black hole.", blackhole, empire));
-//
+
 
     }
 }

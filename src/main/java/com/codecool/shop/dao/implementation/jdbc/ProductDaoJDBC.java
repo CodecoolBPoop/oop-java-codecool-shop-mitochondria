@@ -34,7 +34,7 @@ public class ProductDaoJDBC implements ProductDao {
     public void add(Product product) {
         try {
             Statement st = connection.conn.createStatement();
-            String sqlQuery = "insert into product (name, description, price, currency) values (?, ?, ?, ?)";
+            String sqlQuery = "insert into product (name, description, default_price, currency_string) values (?, ?, ?, ?)";
             PreparedStatement preparedStatement = connection.conn.prepareStatement(sqlQuery);
             preparedStatement.setString(1, product.getName());
             preparedStatement.setString(2, product.getDescription());
@@ -110,7 +110,20 @@ public class ProductDaoJDBC implements ProductDao {
 
     @Override
     public List<Product> getBy(ProductCategory productCategory) {
-        return null;
+        int categoryId = productCategory.getId();
+        ArrayList<Product> everyProduct = new ArrayList<>();
+
+        try {
+            String sql = "select * from product where product_category_id = ?";
+            PreparedStatement preppedStmnt = connection.conn.prepareStatement(sql);
+            preppedStmnt.setInt(1, categoryId);
+            ResultSet results = preppedStmnt.executeQuery();
+            everyProduct = collectProductsToList(results);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return everyProduct;
     }
 
     private ArrayList<Product> collectProductsToList(ResultSet results) throws SQLException {
