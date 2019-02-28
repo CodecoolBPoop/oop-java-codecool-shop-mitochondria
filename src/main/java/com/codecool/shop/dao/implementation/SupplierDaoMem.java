@@ -11,6 +11,7 @@ public class SupplierDaoMem implements SupplierDao {
 
     private List<Supplier> data = new ArrayList<>();
     private static SupplierDaoMem instance = null;
+    private static SupplierDaoMem testInstance = null;
 
     /* A private Constructor prevents any other class from instantiating.
      */
@@ -22,6 +23,13 @@ public class SupplierDaoMem implements SupplierDao {
             instance = new SupplierDaoMem();
         }
         return instance;
+    }
+
+    public static SupplierDaoMem getTestInstance() {
+        if (testInstance == null) {
+            testInstance = new SupplierDaoMem();
+        }
+        return testInstance;
     }
 
     @Override

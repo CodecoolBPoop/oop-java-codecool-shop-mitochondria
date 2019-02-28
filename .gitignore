@@ -18,3 +18,29 @@ target/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+.attach_pid13046
+.attach_pid5319
+.attach_pid5465
+.attach_pid5536
+.attach_pid5577
+.attach_pid5657
+.attach_pid6417
+.attach_pid6534
+.attach_pid7590
+.attach_pid7892
+.attach_pid7972
+.attach_pid8183
+.attach_pid8235
+.attach_pid10091
+.attach_pid9565
+.attach_pid9617
+.attach_pid9746
+.attach_pid10639
+.attach_pid12014
+         .attach_pid12082
+         .attach_pid12161
+         .attach_pid12255
+         .attach_pid12380
+         .attach_pid12311
+
