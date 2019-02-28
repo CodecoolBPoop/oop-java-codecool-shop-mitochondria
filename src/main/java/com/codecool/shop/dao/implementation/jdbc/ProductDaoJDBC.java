@@ -81,7 +81,7 @@ public class ProductDaoJDBC implements ProductDao {
             searched.setId(results.getInt("id"));
             searched.setName(results.getString("name"));
             searched.setDescription(results.getString("description"));
-            searched.setPrice(results.getFloat("price"), "USD");
+            searched.setPrice(results.getFloat("default_price"), "USD");
             searched.setSupplier(new Supplier(results.getString(9), results.getString(10)));
             searched.setProductCategory(new ProductCategory(results.getString(11), results.getString(12), results.getString(13)));
         }
@@ -124,6 +124,7 @@ public class ProductDaoJDBC implements ProductDao {
             everyProduct.add(current);
         }
         return everyProduct;
+        //this is a comment
     }
 
 }
