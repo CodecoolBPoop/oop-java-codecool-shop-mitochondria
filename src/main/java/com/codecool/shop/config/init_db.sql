@@ -20,8 +20,7 @@ create table supplier
 );
 
 create table product_category
-(
-	id serial not null
+(	id serial not null
 		constraint product_category_pk
 			primary key,
 	name varchar,
