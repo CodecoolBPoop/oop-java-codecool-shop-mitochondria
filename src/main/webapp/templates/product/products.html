@@ -48,7 +48,7 @@
                 </div>
                 <div class="card-body">
                     <div class="card-text">
-                        <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
+                        <p class="lead" th:text="${prod.getDefaultPrice()} + ' ' + USD">100 USD</p>
                         <!--<p class="supplier" th:text="${prod.supplier.name}"></p>-->
                     </div>
                     <form action="/addtocart">

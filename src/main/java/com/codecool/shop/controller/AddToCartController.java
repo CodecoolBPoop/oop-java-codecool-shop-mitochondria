@@ -31,7 +31,7 @@ public class AddToCartController extends HttpServlet {
         for (int i = 0; i < (ProductDaoMem.getInstance().getAll().size()+1); i++) {
 
             String str = Integer.toString(i);
-
+            String btn = req.getParameter(str);
             if (req.getParameter(str) != null){
                 shoppingCart.add(ProductDaoMem.getInstance().find(i));
             }
