@@ -6,7 +6,6 @@ import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.dao.SupplierDao;
 import com.codecool.shop.dao.implementation.jdbc.ProductDaoJDBC;
 import com.codecool.shop.dao.implementation.mem.ProductCategoryDaoMem;
-import com.codecool.shop.dao.implementation.mem.ProductDaoMem;
 import com.codecool.shop.dao.implementation.mem.ShoppingCart;
 import com.codecool.shop.dao.implementation.mem.SupplierDaoMem;
 import org.thymeleaf.TemplateEngine;
@@ -66,15 +65,24 @@ public class ProductController extends HttpServlet {
 
 
 
+//        if (testText.equalsIgnoreCase("All Categories") && testText2.equalsIgnoreCase("All Suppliers")) {
+//            context.setVariable("products", productDataStore.getAll());
+//        }
+//        else if (testText2.equalsIgnoreCase("All Suppliers") && !testText.equalsIgnoreCase("All Categories")) {
+//            context.setVariable("products", productDataStore.getBy(productCategoryDataStore.findByName(testText)));
+//        } else {
+//            context.setVariable("products", productDataStore.getBy(supplierDataStore.findByName(testText2)));
+//        }
+
+
         if (testText.equalsIgnoreCase("All Categories") && testText2.equalsIgnoreCase("All Suppliers")) {
             context.setVariable("products", productDataStore.getAll());
         }
         else if (testText2.equalsIgnoreCase("All Suppliers") && !testText.equalsIgnoreCase("All Categories")) {
             context.setVariable("products", productDataStore.getBy(productCategoryDataStore.findByName(testText)));
-        } else {
+        } else if(!testText2.equalsIgnoreCase("All Suppliers") && testText.equalsIgnoreCase("All Categories")) {
             context.setVariable("products", productDataStore.getBy(supplierDataStore.findByName(testText2)));
-            System.out.println("intext2");
-        }
+        } else {context.setVariable("products", productDataStore.getBy(productCategoryDataStore.findByName(testText), supplierDataStore.findByName(testText2)));}
 
 
 //        if (testText2.equalsIgnoreCase("All Supplier")) {

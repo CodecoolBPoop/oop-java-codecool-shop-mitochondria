@@ -122,6 +122,26 @@ public class ProductDaoJDBC implements ProductDao {
     }
 
     @Override
+    public List<Product> getBy(ProductCategory productCategory, Supplier supplier) {
+        int categoryId = productCategory.getId();
+        int supplierId = supplier.getId();
+        ArrayList<Product> everyProduct = new ArrayList<>();
+
+        try {
+            String sql = "select * from product where product_category_id = ? and product.supplier_id = ?";
+            PreparedStatement preppedStmnt = connection.conn.prepareStatement(sql);
+            preppedStmnt.setInt(1, categoryId);
+            preppedStmnt.setInt(2, supplierId);
+            ResultSet results = preppedStmnt.executeQuery();
+            everyProduct = collectProductsToList(results);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return everyProduct;
+    }
+
+    @Override
     public List<Product> getBy(ProductCategory productCategory) {
         int categoryId = productCategory.getId();
         ArrayList<Product> everyProduct = new ArrayList<>();
@@ -138,6 +158,8 @@ public class ProductDaoJDBC implements ProductDao {
         }
         return everyProduct;
     }
+
+
 
     private ArrayList<Product> collectProductsToList(ResultSet results) throws SQLException {
         ArrayList<Product> everyProduct = new ArrayList<>();
