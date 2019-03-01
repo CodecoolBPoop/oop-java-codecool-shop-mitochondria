@@ -1,16 +1,16 @@
-drop table if not exists _user
+drop table if not exists test_user
 
 
-create table "_user"
+create table "test_user"
 (
   id       serial not null
-    constraint "_user_pk"
+    constraint "user_pk"
       primary key,
   name     varchar,
   password varchar
 );
 
-create table supplier
+create table test_supplier
 (
 	id serial not null
 		constraint supplier_pk
@@ -19,7 +19,7 @@ create table supplier
 	description varchar
 );
 
-create table product_category
+create table test_product_category
 (	id serial not null
 		constraint product_category_pk
 			primary key,
@@ -28,7 +28,7 @@ create table product_category
 	description varchar
 );
 
-create table product
+create table test_product
 (
 	id serial not null
 		constraint product_pk
