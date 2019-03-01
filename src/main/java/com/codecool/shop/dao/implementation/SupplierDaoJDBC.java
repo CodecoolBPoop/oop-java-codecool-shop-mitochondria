@@ -80,7 +80,7 @@ public class SupplierDaoJDBC implements SupplierDao {
                 allSuppliers.add(supplier);
 
 
-                connection.close();
+
             }
         } catch (SQLException e) {
             e.printStackTrace();

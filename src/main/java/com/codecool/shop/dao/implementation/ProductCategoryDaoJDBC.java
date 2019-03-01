@@ -104,7 +104,7 @@ public class ProductCategoryDaoJDBC implements ProductCategoryDao {
                 allProductCategory.add(productCategory);
 
 
-                connection.close();
+
             }
         } catch (SQLException e) {
             e.printStackTrace();

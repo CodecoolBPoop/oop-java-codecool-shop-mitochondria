@@ -41,8 +41,11 @@ public class Initializer implements ServletContextListener {
         Supplier republic = new Supplier("Republic", "A senate leaded Republic");
         supplierDataStore.add(republic);
 
-        ProductCategoryDao jdbccat = ProductCategoryDaoJDBC.getInstance();
-        System.out.println(jdbccat.findByName("Planet"));
+        ProductCategoryDao jdbcprod = ProductCategoryDaoJDBC.getInstance();
+        System.out.println(jdbcprod.findByName("Star"));
+
+        SupplierDao jdbcsup = SupplierDaoJDBC.getInstance();
+        System.out.println(jdbcsup.getAll());
 
         //setting up a new product category
         ProductCategory star = new ProductCategory("Star", "thermonuclear", "Luminous and thermonuclear gas objects.");
