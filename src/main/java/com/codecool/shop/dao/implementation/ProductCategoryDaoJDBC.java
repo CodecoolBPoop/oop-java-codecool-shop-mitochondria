@@ -63,6 +63,20 @@ public class ProductCategoryDaoJDBC implements ProductCategoryDao {
 
     @Override
     public ProductCategory findByName(String cat) {
+        ProductCategory productCategory;
+        try{
+            PreparedStatement st = connection.prepareStatement("SELECT * FROM product_category WHERE name = ?");
+            st.setString(1, cat);
+            ResultSet rs = st.executeQuery();
+
+            if (rs.next()){
+                productCategory = new ProductCategory(rs.getString("name"), rs.getString("department"), rs.getString("description"));
+                productCategory.setId(rs.getInt("id"));
+                return productCategory;
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
         return null;
     }
 
