@@ -10,6 +10,7 @@ public class ConnectionUtil {
 
     private static ConnectionUtil instance;
     private Connection connection;
+    private Connection productionConnection;
 
     public static ConnectionUtil getInstance(){
 
